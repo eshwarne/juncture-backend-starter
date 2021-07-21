@@ -2,10 +2,11 @@ package com.juncture.backend.models;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class Player {
     @NotNull
-    @Min(value=2, message = "name cannot be less than 2 characters")
+    @Size(min =6, message = "name cannot be less than 6 characters")
     private String name;
     @NotNull
     private String id;
