@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.*;
 
 @RestController
@@ -31,7 +32,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createPlayer(@RequestBody CreatePlayerRequest createPlayerRequestData ){
+    public ResponseEntity<String> createPlayer(@Valid @RequestBody CreatePlayerRequest createPlayerRequestData ){
        ResponseEntity<String> createdPlayerResponse = userService.createUser(createPlayerRequestData);
         return createdPlayerResponse;
     }

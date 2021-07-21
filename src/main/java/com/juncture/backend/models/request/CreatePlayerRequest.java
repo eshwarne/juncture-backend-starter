@@ -1,7 +1,13 @@
 package com.juncture.backend.models.request;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class CreatePlayerRequest {
+    @NotNull
+    @Min(value = 2, message = "Name should be minimum of 2 characters")
     private String name;
+    @NotNull(message = "Your date of birth cannot be empty")
     private String dateOfBirth;
 
     public CreatePlayerRequest(String name, String dateOfBirth) {

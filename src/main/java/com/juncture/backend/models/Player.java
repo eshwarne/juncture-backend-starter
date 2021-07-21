@@ -1,9 +1,17 @@
 package com.juncture.backend.models;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class Player {
+    @NotNull
+    @Min(value=2, message = "name cannot be less than 2 characters")
     private String name;
+    @NotNull
     private String id;
+    @NotNull
     private double reputation;
+    @NotNull
     private String dateOfBirth;
 
     public Player() {
